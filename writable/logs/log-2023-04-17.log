@@ -1,0 +1,170 @@
+INFO - 2023-04-17 00:31:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-17 00:41:38 --> Call to undefined method App\Controllers\Form::insert_data()
+in APPPATH\Controllers\Form.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 00:42:31 --> Call to undefined method App\Controllers\Form::estab()
+in APPPATH\Controllers\Form.php on line 35.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 00:50:20 --> Array to string conversion
+in APPPATH\Controllers\Form.php on line 32.
+ 1 APPPATH\Controllers\Form.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\Form.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 00:51:12 --> Array to string conversion
+in APPPATH\Controllers\Form.php on line 32.
+ 1 APPPATH\Controllers\Form.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'APPPATH\\Controllers\\Form.php', 32)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 00:59:38 --> Too few arguments to function App\Models\DataModel::__construct(), 0 passed in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 34 and exactly 1 expected
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(34): App\Models\DataModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:00:45 --> App\Models\DataModel::__construct(): Argument #1 ($db) must be of type Codeigniter\Database\ConnectionInterface, null given, called in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 34
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(34): App\Models\DataModel->__construct(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:02:06 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 882.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table(null)
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\Form.php(35): CodeIgniter\Model->__call('addData', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:03:08 --> App\Models\DataModel::__construct(): Argument #1 ($db) must be of type Codeigniter\Database\ConnectionInterface, null given, called in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 34
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(34): App\Models\DataModel->__construct(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:07:41 --> Too few arguments to function App\Models\DataModel::__construct(), 0 passed in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 29 and exactly 1 expected
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(29): App\Models\DataModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:08:24 --> Too few arguments to function App\Models\DataModel::__construct(), 0 passed in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 29 and exactly 1 expected
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(29): App\Models\DataModel->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:10:08 --> App\Models\DataModel::__construct(): Argument #1 ($db) must be of type Codeigniter\Database\ConnectionInterface, null given, called in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 29
+in APPPATH\Models\DataModel.php on line 12.
+ 1 APPPATH\Controllers\Form.php(29): App\Models\DataModel->__construct(null)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-04-17 01:11:15 --> mysqli_sql_exception: Column 'es_name' cannot be null in C:\xampp\htdocs\registration\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\registration\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `es...', 0)
+#1 C:\xampp\htdocs\registration\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `es...')
+#2 C:\xampp\htdocs\registration\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `es...')
+#3 C:\xampp\htdocs\registration\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `es...', Array, false)
+#4 C:\xampp\htdocs\registration\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\registration\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\registration\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\registration\app\Models\DataModel.php(28): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\registration\app\Controllers\Form.php(29): App\Models\DataModel->addData('23622', NULL)
+#9 C:\xampp\htdocs\registration\system\CodeIgniter.php(934): App\Controllers\Form->addData()
+#10 C:\xampp\htdocs\registration\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+#11 C:\xampp\htdocs\registration\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp\htdocs\registration\index.php(67): CodeIgniter\CodeIgniter->run()
+#13 {main}
+CRITICAL - 2023-04-17 01:11:15 --> Column 'es_name' cannot be null
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `establishment` (`code`, `es_name`) VALUES (:code:, :es_name:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\DataModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Form.php(29): App\Models\DataModel->addData('23622', null)
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 01:21:46 --> Too few arguments to function App\Models\DataModel::addData(), 1 passed in C:\xampp\htdocs\registration\app\Controllers\Form.php on line 33 and exactly 2 expected
+in APPPATH\Models\DataModel.php on line 21.
+ 1 APPPATH\Controllers\Form.php(33): App\Models\DataModel->addData([...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->addData()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-17 01:23:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 01:41:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 01:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 01:43:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 01:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 02:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 03:00:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-04-17 05:53:58 --> Undefined variable $users
+in APPPATH\Views\pages\admin\table.php on line 70.
+ 1 APPPATH\Views\pages\admin\table.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'APPPATH\\Views\\pages\\admin\\table.php', 70)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\admin\\table.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/table', [], true)
+ 5 APPPATH\Controllers\Form.php(46): view('pages/admin/table')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->table()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 05:54:39 --> Undefined variable $read_data
+in APPPATH\Views\pages\admin\table.php on line 70.
+ 1 APPPATH\Views\pages\admin\table.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $read_data', 'APPPATH\\Views\\pages\\admin\\table.php', 70)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\admin\\table.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/table', [], true)
+ 5 APPPATH\Controllers\Form.php(46): view('pages/admin/table')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->table()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 05:55:22 --> Undefined variable $read_data
+in APPPATH\Views\pages\admin\table.php on line 70.
+ 1 APPPATH\Views\pages\admin\table.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $read_data', 'APPPATH\\Views\\pages\\admin\\table.php', 70)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\admin\\table.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/table', [], true)
+ 5 APPPATH\Controllers\Form.php(46): view('pages/admin/table')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->table()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-04-17 06:02:27 --> Undefined variable $read_data
+in APPPATH\Views\pages\admin\table.php on line 70.
+ 1 APPPATH\Views\pages\admin\table.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $read_data', 'APPPATH\\Views\\pages\\admin\\table.php', 70)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\pages\\admin\\table.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/admin/table', [], true)
+ 5 APPPATH\Controllers\Form.php(46): view('pages/admin/table')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Form->table()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Form))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-04-17 07:57:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 07:57:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 07:57:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 07:57:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 08:12:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-04-17 08:19:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

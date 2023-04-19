@@ -1,0 +1,13 @@
+CRITICAL - 2023-04-12 01:48:49 --> Invalid file: "assets/css/custom.css"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('FCPATH\\assets\\css\\custom.css')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('FCPATH\\assets\\css\\custom.css', [], true)
+ 3 APPPATH\Views\auth\login.php(7): view('FCPATH\\assets\\css\\custom.css')
+ 4 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\auth\\login.php')
+ 5 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 6 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('auth/login', [], true)
+ 7 APPPATH\Controllers\Login.php(12): view('auth/login')
+ 8 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->index()
+ 9 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+10 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
