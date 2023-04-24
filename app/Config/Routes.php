@@ -45,6 +45,8 @@ $routes->get('table', 'Form::table');
 
 $routes->post('delete_data', 'Form::delete_id');
 
+$routes->post('update', 'Form::updateData');
+
 
 
 

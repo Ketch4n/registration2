@@ -1,4 +1,4 @@
-<div class="col-xl-4 col-md-12">
+<div class="col-xl-6 col-md-12">
                                                 <div class="card mat-stat-card">
                                                     <div class="card-block">
                                                         <div class="row align-items-center b-b-default">
@@ -53,7 +53,7 @@
                                                 </div>
                                             </div>
 <!-- half -->
-<div class="col-xl-4 col-md-12">
+<div class="col-xl-6 col-md-12">
                                                 <div class="card mat-stat-card">
                                                     <div class="card-block">
                                                         <div class="row align-items-center b-b-default">
@@ -108,7 +108,7 @@
                                                 </div>
                                             </div>
 <!-- 3rd -->
-                                            <div class="col-xl-4 col-md-12">
+                                            <!-- <div class="col-xl-4 col-md-12">
                                                 <div class="card mat-clr-stat-card text-white green ">
                                                     <div class="card-block">
                                                         <div class="row">
@@ -135,4 +135,4 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->

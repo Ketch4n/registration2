@@ -32,11 +32,11 @@ class DataModel extends Model{
     $builder->where('id', $id);
     $builder->delete();
 }
- public function updateData($id, $data)
+ public function updateData($data,$where)
     {  
         $builder = $this->db->table("establishment");
-        $builder->where('id', $id);
-        $builder->update($data);
+        $builder->where($where);
+        return $builder->update($data);
     }
 
     

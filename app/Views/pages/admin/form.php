@@ -50,8 +50,9 @@
                                             // echo view("content/form/form4.php")
                                             ?>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
+                                        <div class="row form_flex">
+                                           
+                                            <div class="col-sm-8">
                                                 <!-- Basic Form Inputs card start -->
                                                 <div class="card">
                                                     <div class="card-header">
@@ -111,20 +112,11 @@
                                                                 <div class="col-sm-10">
                                                                     <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
                                                                 </div>
-                                                            </div> -->
-                                                            <div class="form-group row">
-                                                           
-                                                              <div class="col-sm-4">
-                                                              </div>     
-                                                               <div class="col-sm-4">
-                                                              </div>                                  
-                                                              <div class="col-sm-4" style="padding-right:2rem">
-                                                                <button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">submit</button>
-                                                              </div>
-                                                                  
-                                                            </div>
-                                                        </form>
-                                                        
+                                                            </div> -->                           
+                                                              <div class="pull-right">
+                                                                <button type="submit" class="btn_submit">submit</button>
+                                                              </div>                                                                                                         
+                                                        </form>                                                        
                                                         <?php 
                                                         // echo view("content/form/form5.php")
                                                         ?>
@@ -147,16 +139,10 @@
             </div>
         </div>
     </div>
-
-
-    
-
-    <?php 
+<?php 
    echo view("include/script");
-   ?>
-   
-   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-   <script>
+?>
+<script>
     $(document).ready(function() {
         $('#form_input').submit(function(e) {
             e.preventDefault();

@@ -47,39 +47,25 @@ class Form extends BaseController
     return true;
 }
 public function updateData(){
-
+{
 
         // Get form data
-        $id = $this->request->getVar('id');
-        $code = $this->request->getVar('code');
-        $es_name = $this->request->getVar('es_name');
+    //    $data = $this->request->updateData();
+
+    $data = $this->request->getPost();
+}
+    $where = array('id' => $this->request->getPost('id'));
+
+    $update = $this->DataModel->updateData($data,$where);
+
+    if($update) {
+        echo 'Updated';
+    }else {
+        echo 'Error';
+    }
 
         // Validate form data
-        $validation =  \Config\Services::validation();
-        $validation->setRules([
-            'id' => 'required',
-            'code' => 'required',
-            'es_name' => 'required'
-        ]);
-        $isDataValid = $validation->run([
-            'id' => $id,
-            'code' => $code,
-            'es_name' => $es_name
-        ]);
-
-        // Update database
-        if($isDataValid){
-            // $model = new UpdateModel();
-            $this->DataModel->update($id, [
-                'code' => $code,
-                'es_name' => $es_name
-            ]);
-            return redirect()->to('/');
-        }else{
-            // Display validation errors
-            $data['validation'] = $validation;
-            return view('update', $data);
-        }
+      
 }
 
 

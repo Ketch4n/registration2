@@ -1,6 +1,6 @@
-                                                           
+                                                      
                                                             <div class="form-group row">
-                                                         <input name="id" hidden>
+                                                               <input type="">
                                                                 <div class="col-sm-12">
                                                                     <input type="text" class="form-control form-control" 
                                                                     placeholder="ES - Code" name="code" required>
@@ -10,6 +10,7 @@
                                                                 <!-- <label class="col-sm-2">Establishment Name</label> -->
                                                                 <div class="col-sm-12">
                                                                     <input type="text" class="form-control form-control" 
+                                                                    value= ""
                                                                     placeholder="Establishment Name" name="es_name" required>
                                                                 </div>
                                                             </div>
@@ -49,3 +50,4 @@
                                                                     placeholder="Position" name="position" required>
                                                                 </div>
                                                             </div>
+                                                   

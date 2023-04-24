@@ -21,7 +21,8 @@
 <!-- font-awesome-n -->
 <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-n.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+ 
 
       
  

@@ -80,22 +80,36 @@
                                                                 <td><?= $user['auth_person'] ?></td>
                                                                 <td><?= $user['position'] ?></td>
                                                                 <td>
-                                                                    <span id="myBtn"><i class="fa fa-edit" ></i></span>
+                                                                    <span id="myBtn"><i class="fa fa-edit" 
+                                                                    data-toggle="modal" id="update_btn" 
+                                                                    data-name-id="<?php echo $user['id']?>"
+                                                                    data-name-estab="<?php echo $user['es_name'] ?>" 
+                                                                    data-name-code="<?php echo $user['code'] ?>" 
+                                                                    data-name-contact="<?php echo $user['contact_number'] ?>" 
+                                                                    data-name-address="<?php echo $user['address']?>"
+                                                                    data-name-email="<?php echo $user['email_address']?>"
+                                                                    data-name-auth="<?php echo $user['auth_person']?>"
+                                                                    data-name-pos="<?php echo $user['position']?>"
+
+
+                                                                    data-target="#Modal1"></i></span>
                                                                     &nbsp;
                                                                    <span class="delete-btn" data-id="<?= $user['id']?>"> 
                                                                    <i class="fa fa-trash"></i></span>
                                                                    
                                                                     
-                                                                    
+                                                                      <?php endforeach; ?>
                                                                 </td>
                                                             </tr>
-                                                        <?php endforeach; ?>
+                                                      
                                                         </tbody>
                                                     </table>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php echo view("include/update_modal.php")?>
+                                    
                                     <!-- Page-body end -->
                                 </div>
                             </div>
@@ -120,14 +134,63 @@
 <script>
     $(document).ready( function () {
   $('#myTable').DataTable({
-    destroy: true
+    destroy: true,
     "paging": true, // disable pagination
     "ordering": true, // disable sorting
     "searching": true // disable searching
   });
 });
-</script>
 
+$(document).on('click', '#update_btn',function(){
+    $('input[name=id]').val($(this).data('name-id'));
+
+    $('input[name=es_name]').val($(this).data('name-estab'));
+    $('input[name=code]').val($(this).data('name-code'));
+    $('input[name=contact_number]').val($(this).data('name-contact'));
+    $('input[name=address]').val($(this).data('name-address'));
+    $('input[name=email_address]').val($(this).data('name-email'));
+    $('input[name=auth_person]').val($(this).data('name-auth'));
+    $('input[name=position]').val($(this).data('name-pos'));
+})
+</script>
+<script>
+    // $(document).ready(function() {
+        // $('#form_modal').submit(function(e) {
+        //     e.preventDefault();
+            
+            // $.ajax({
+            //     url: '<?= base_url('update') ?>',
+            //     type: 'post',
+            //     data: $(this).serialize(),
+            //     success: function(response) {
+            //         alert(response);
+            //         window.location.href = base_url + 'table';
+            //     },
+            //     error: function(xhr, status, error) {
+            //         console.log(xhr.responseText);
+            //     }
+            // });
+        // });
+
+        $('#update_estab').on('submit', function(e) {
+            e.preventDefault();
+
+               $.ajax({
+                url: '<?= base_url('update') ?>',
+                type: 'post',
+                data: $(this).serialize(),
+                dataType : 'text',
+                success: function(response) {
+                    alert(response);
+                    window.location.href = base_url + 'table';
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        })
+
+</script>
 <script>
     $(document).on('click', '.delete-btn', function() {
 

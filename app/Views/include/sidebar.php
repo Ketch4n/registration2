@@ -12,7 +12,7 @@
                                     <ul>
                                         <li class="more-details">
                                             <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
-                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <!-- <a href="#!"><i class="ti-settings"></i>Settings</a> -->
                                             <a href="<?php echo base_url('signout')?>"><i class="ti-layout-sidebar-left"></i>Logout</a>
                                         </li>
                                     </ul>
@@ -58,39 +58,28 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                 <li class="">
+                                 <!-- <li class="">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark menu">
                                         <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
                                         <span class="pcoded-mtext">Charts</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
-                                <li class="">
+                                </li> -->
+                                <!-- <li class="">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark menu">
                                         <span class="pcoded-micon"><i class="ti-map-alt"></i><b>M</b></span>
                                         <span class="pcoded-mtext">Maps</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                </li>
-                                 <li class="pcoded-submenu">
+                                </li> -->
+                                 <!-- <li class="pcoded-submenu">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark menu">
                                         <span class="pcoded-micon"><i class="ti-layout-grid2-alt"></i><b>BC</b></span>
                                         <span class="pcoded-mtext">Basic</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
-                                    <!-- <ul class="pcoded-submenu ">
-                                       
-                                        <li class="">
-                                            <a href="javascript:void(0)" class="waves-effect waves-dark menu">
-                                                <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
-                                                <span class="pcoded-mtext">Accordion</span>
-                                                <span class="pcoded-mcaret"></span>
-                                            </a>
-                                        </li>
-                                        
-                                      
-                                    </ul> -->
-                                </li>
+                                   
+                                </li> -->
                                  <li class="pcoded-hasmenu ">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark menu">
                                         <span class="pcoded-micon"><i class="ti-id-badge"></i><b>A</b></span>
