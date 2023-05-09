@@ -29,27 +29,30 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// AuthCheck
 $routes->get('/', 'Login::index',['filter' => 'sessionCheck']);
 
 $routes->get('/dashboard', 'Dashboard::index',['filter' => 'authGuard']);
+// Signout
+$routes->get('signout', 'Login::signout');
+// Input Form
+$routes->get('form', 'Form::index');
+// Data Tables 
+$routes->get('table', 'Form::table');
+
 //login
 $routes->post('verify', 'Login::verify');
 
-$routes->get('signout', 'Login::signout');
-
-$routes->get('form', 'Form::index');
-
-$routes->post('estab', 'Form::addData');
-
-$routes->get('table', 'Form::table');
-
-$routes->post('delete_data', 'Form::delete_id');
-
+$routes->post('update_modal', 'Form::updateModal');
+// write data
+$routes->post('create', 'Form::createData');
+// read data
+$routes->post('read', 'Form::readData');
+// update row
 $routes->post('update', 'Form::updateData');
-
-
-
-
+// delete row
+$routes->post('delete', 'Form::deleteData');
 
 
 

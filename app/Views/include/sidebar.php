@@ -43,7 +43,13 @@
                                     </a>
                                 </li>
                                  <!-- <li class="pcoded-hasmenu"> -->
-                               
+                               <li class="pcoded-submenu <?= $currentURL == '/table' ? "active" : '' ?>">
+                                    <a href="<?php echo base_url('table')?>" class="waves-effect waves-dark menu">
+                                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
+                                        <span class="pcoded-mtext">Table</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
                                 <li class="pcoded-submenu <?= $currentURL == '/form' ? "active" : '' ?>">
                                     <a href="<?php echo base_url('form')?>" class="waves-effect waves-dark menu ">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
@@ -51,13 +57,7 @@
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
-                                 <li class="pcoded-submenu <?= $currentURL == '/table' ? "active" : '' ?>">
-                                    <a href="<?php echo base_url('table')?>" class="waves-effect waves-dark menu">
-                                        <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
-                                        <span class="pcoded-mtext">Table</span>
-                                        <span class="pcoded-mcaret"></span>
-                                    </a>
-                                </li>
+                                 
                                  <!-- <li class="">
                                     <a href="javascript:void(0)" class="waves-effect waves-dark menu">
                                         <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>

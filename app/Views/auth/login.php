@@ -118,7 +118,7 @@
               
                 if(data.response){
 
-                    alert(data.message)
+                   
                     window.location.href = base_url + 'dashboard';
 
                 }else {

@@ -148,7 +148,7 @@
             e.preventDefault();
             
             $.ajax({
-                url: '<?= base_url('estab') ?>',
+                url: '<?= base_url('create') ?>',
                 type: 'post',
                 data: $(this).serialize(),
                 success: function(response) {

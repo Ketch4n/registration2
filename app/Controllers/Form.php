@@ -15,58 +15,64 @@ class Form extends BaseController
        $db = db_connect();
        $this->DataModel = new DataModel($db); 
        $this->request = \Config\Services::request();  
+       
     }
     public function index()
     {
         return view("pages/admin/form");
     }
 
-     public function addData()
+    public function table()
     {
-        // $code = $this->request->getPost('code');
-        // $es_name = $this->request->getPost('es_name');
-        
-         $data = $this->request->getPost();
- 
-         $this->DataModel->addData($data);
-        
+        return view('pages/admin/table');
+    }
+
+     public function createData()
+    {
+        $data = $this->request->getPost();
+        $this->DataModel->addData($data);
         echo 'Data added successfully';
     }
 
-    public function table(){
-        // $model = new ExampleModel();
-        $data = $this->DataModel->getData();
-        return view('pages/admin/table', ['table_data' => $data]);
+    public function readData()
+    {
+    $data = $this->DataModel->findAll();
+    return $this->response->setJSON($data);
+    }
+
+    public function deleteData()
+    {
+    $id = $this->request->getPost('id');
+    $this->DataModel->deleteRow($id);
+    return $this->response->setJSON(['status' => 'success', 'message' => 'Row deleted successfully.']);
+    }
+
+    public function updateModal()
+    {
+    // $model = new YourModel();
+    $id = $this->request->getPost('id');
+    $row = $this->DataModel->find($id);
+
+    $data['row'] = $row;
 
     }
-    public function delete_id()
-{
     
-    $id = $this->request->getVar('id');
-   $this->DataModel->deleteData($id);
-    return true;
-}
-public function updateData(){
-{
-
-        // Get form data
-    //    $data = $this->request->updateData();
-
-    $data = $this->request->getPost();
-}
+    public function updateData()
+    {
+    {
+      $data = $this->request->getPost();
+    }
     $where = array('id' => $this->request->getPost('id'));
-
     $update = $this->DataModel->updateData($data,$where);
 
-    if($update) {
+    if($update)
+    {
         echo 'Updated';
-    }else {
-        echo 'Error';
     }
-
-        // Validate form data
-      
-}
-
+    else 
+    {
+        echo 'Error';
+    } 
+    }
 
 }

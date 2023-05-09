@@ -42,8 +42,13 @@
                                         <div class="card">
                                             <div class="card-header">
                                                 <h5>List of Establishment Data</h5>
+                                              
+                                                <div class="pull-right">
+                                                                <a href="#" data-toggle="modal" data-target="#Modal"><button class="btn_submit" style="outline: none;"
+                                                                 >Add New</button></a>
+                                                              </div>  
                                                 <!-- <span>use class <code>table-hover</code> inside table element</span> -->
-                                                <div class="card-header-right">
+                                                <!-- <div class="card-header-right">
                                                     <ul class="list-unstyled card-option">
                                                         <li><i class="fa fa fa-wrench open-card-option"></i></li>
                                                         <li><i class="fa fa-window-maximize full-card"></i></li>
@@ -51,11 +56,14 @@
                                                         <li><i class="fa fa-refresh reload-card"></i></li>
                                                         <li><i class="fa fa-trash close-card"></i></li>
                                                     </ul>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="card-block table-border-style">
+                                                
                                                 <div class="table-responsive">
+                                                    
                                                     <table id="myTable">
+                                                                
                                                         <thead style="background-color:lightblue">
                                                             <tr>
                                                                 <th>Code</th>
@@ -65,43 +73,11 @@
                                                                 <th>Email Address</th>
                                                                 <th>Authorize Person</th>
                                                                 <th>Position</th>
-                                                                <th>Action</th>
-                                                               
+                                                                <th>Annual Report</th>
+                                                                <th>Action</th> 
                                                             </tr>
                                                         </thead>
                                                         <tbody > 
-                                                            <?php foreach ($table_data as $user): ?>
-                                                            <tr>
-                                                                <td style="font-weight: bold;"><?= $user['code'] ?></td>
-                                                                <td><?= $user['es_name'] ?></td>
-                                                                <td><?= $user['contact_number'] ?></td>
-                                                                <td><?= $user['address'] ?></td>
-                                                                <td><?= $user['email_address'] ?></td>
-                                                                <td><?= $user['auth_person'] ?></td>
-                                                                <td><?= $user['position'] ?></td>
-                                                                <td>
-                                                                    <span id="myBtn"><i class="fa fa-edit" 
-                                                                    data-toggle="modal" id="update_btn" 
-                                                                    data-name-id="<?php echo $user['id']?>"
-                                                                    data-name-estab="<?php echo $user['es_name'] ?>" 
-                                                                    data-name-code="<?php echo $user['code'] ?>" 
-                                                                    data-name-contact="<?php echo $user['contact_number'] ?>" 
-                                                                    data-name-address="<?php echo $user['address']?>"
-                                                                    data-name-email="<?php echo $user['email_address']?>"
-                                                                    data-name-auth="<?php echo $user['auth_person']?>"
-                                                                    data-name-pos="<?php echo $user['position']?>"
-
-
-                                                                    data-target="#Modal1"></i></span>
-                                                                    &nbsp;
-                                                                   <span class="delete-btn" data-id="<?= $user['id']?>"> 
-                                                                   <i class="fa fa-trash"></i></span>
-                                                                   
-                                                                    
-                                                                      <?php endforeach; ?>
-                                                                </td>
-                                                            </tr>
-                                                      
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -109,7 +85,7 @@
                                         </div>
                                     </div>
                                     <?php echo view("include/update_modal.php")?>
-                                    
+                                    <?php echo view("include/add_modal.php")?>
                                     <!-- Page-body end -->
                                 </div>
                             </div>
@@ -122,29 +98,66 @@
             </div>
         </div>
     </div>           
-<?php echo view("include/script.php")?>
-
-<script type="text/javascript">
-
-  $(document).ready( function () {
-    $('#myTable').DataTable();
-  });
-</script>
+<?php 
+echo view("include/script.php");
+echo view("include/update_modal.php");
+?>
 
 <script>
-    $(document).ready( function () {
-  $('#myTable').DataTable({
-    destroy: true,
-    "paging": true, // disable pagination
-    "ordering": true, // disable sorting
-    "searching": true // disable searching
-  });
-});
+    $('#myTable').DataTable({
+        ajax: {
+            url: base_url + 'read',
+            type : 'POST',
+            dataSrc: ''
+        },
+        columns: [
+            { data: 'code' },
+            { data: 'es_name' },
+            { data: 'contact_number' },
+            { data: 'address' },
+            { data: 'email_address' },
+            { data: 'auth_person' },
+            { data: 'position' },
+            { data: 'annual_report' },
 
-$(document).on('click', '#update_btn',function(){
+            {
+                data: null,
+                render: function(data, type, row) {
+                    return '<span id="upd" data-name-id="'+row.id+'" data-name-name="'+row.es_name+'" data-name-code="'+row.code+'" data-name-contact="'+row.contact_number+'" data-name-address="'+row.address+'" data-name-email="'+row.email_address+'"data-name-auth="'+row.auth_person+'"data-name-pos="'+row.position+'"><i class="fa fa-edit"></i></span>'+
+                    '&nbsp; <span id="del" data-id="'+row.id+'"><i class="fa fa-trash"></i></span>'; 
+                }
+            }
+        ]
+    });
+    $(document).on('click', '#del', function() {
+    var id = $(this).data('id');
+    if(confirm("Are you sure you want to delete this row?")) {
+        $.ajax({
+            url: base_url + 'delete',
+            method: "POST",
+            data: {id: id},
+            success: function(data) {
+                $('#myTable').DataTable().ajax.reload();
+            }
+        });
+    }
+});
+$(document).on('click', '#upd', function() {
+    var id = $(this).data('id');
+    $.ajax({
+        url: base_url + 'update_modal',
+        method: "POST",
+        data: {id: id},
+        success: function(data) {
+            $('#edit-modal-body').html(data);
+            $('#Modal1').modal('show');
+        }
+    });
+});
+$(document).on('click', '#upd',function(){
     $('input[name=id]').val($(this).data('name-id'));
 
-    $('input[name=es_name]').val($(this).data('name-estab'));
+    $('input[name=es_name]').val($(this).data('name-name'));
     $('input[name=code]').val($(this).data('name-code'));
     $('input[name=contact_number]').val($(this).data('name-contact'));
     $('input[name=address]').val($(this).data('name-address'));
@@ -152,65 +165,77 @@ $(document).on('click', '#update_btn',function(){
     $('input[name=auth_person]').val($(this).data('name-auth'));
     $('input[name=position]').val($(this).data('name-pos'));
 })
-</script>
-<script>
-    // $(document).ready(function() {
-        // $('#form_modal').submit(function(e) {
-        //     e.preventDefault();
-            
-            // $.ajax({
-            //     url: '<?= base_url('update') ?>',
-            //     type: 'post',
-            //     data: $(this).serialize(),
-            //     success: function(response) {
-            //         alert(response);
-            //         window.location.href = base_url + 'table';
-            //     },
-            //     error: function(xhr, status, error) {
-            //         console.log(xhr.responseText);
-            //     }
-            // });
-        // });
-
-        $('#update_estab').on('submit', function(e) {
+  $('#update_estab').on('submit', function(e) {
             e.preventDefault();
 
                $.ajax({
-                url: '<?= base_url('update') ?>',
+                url:  base_url + 'update',
                 type: 'post',
                 data: $(this).serialize(),
                 dataType : 'text',
                 success: function(response) {
-                    alert(response);
-                    window.location.href = base_url + 'table';
+                   $('#Modal1').modal('hide');
+                   $('#myTable').DataTable().ajax.reload();
+
                 },
                 error: function(xhr, status, error) {
                     console.log(xhr.responseText);
                 }
             });
         })
-
+$('#add_estab').submit(function(e) {
+            e.preventDefault();
+            
+            $.ajax({
+                url: '<?= base_url('create') ?>',
+                type: 'post',
+                data: $(this).serialize(),
+                success: function(response) {
+                   $('#Modal').modal('hide');
+                   $('#myTable').DataTable().ajax.reload();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
 </script>
 <script>
-    $(document).on('click', '.delete-btn', function() {
+// Initialize a counter for the number of visible modals
+let numVisibleModals = 0;
 
-  var id = $(this).data('id');
-  $.ajax({
-    url: base_url + 'delete_data',
-    type: 'POST',
-    data: { id: id },
-    success: function(result) {
-       alert("Successfully Deleted")
-         window.location.href = base_url + '/table';
+// Attach a listener to all modal elements
+$('.modal').on('hidden.bs.modal', function () {
+  // When a modal is hidden, decrement the counter
+  numVisibleModals--;
 
-    },
-    error: function() {
-     alert("Error")
-    }
-  });
+  // If all modals are hidden, execute your function
+  if (numVisibleModals === 0) {
+    $('input[name=id]').val($(this).data(''));
+
+    $('input[name=es_name]').val($(this).data(''));
+    $('input[name=code]').val($(this).data(''));
+    $('input[name=contact_number]').val($(this).data(''));
+    $('input[name=address]').val($(this).data(''));
+    $('input[name=email_address]').val($(this).data(''));
+    $('input[name=auth_person]').val($(this).data(''));
+    $('input[name=position]').val($(this).data(''));
+  }
+});
+// When a modal is shown, increment the counter
+$('.modal').on('shown.bs.modal', function () {
+  numVisibleModals++;
 });
 
-</script>
-    
+//     $(document).ready( function () {
+//   $('#myTable').DataTable({
+//     destroy: true,
+//     "paging": true, // disable pagination
+//     "ordering": true, // disable sorting
+//     "searching": true // disable searching
+//   });
+// });
+
+</script>  
 </body>
 </html>
