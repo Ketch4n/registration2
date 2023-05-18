@@ -17,6 +17,7 @@
 <!-- Style.css -->
 <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="assets/css/jquery.mCustomScrollbar.css">
+<!-- datatables -->
 <link href="assets/data_tables/datatables.min.css" rel="stylesheet"/> 
 <!-- font-awesome-n -->
 <link rel="stylesheet" type="text/css" href="assets/css/font-awesome-n.min.css">

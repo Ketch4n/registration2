@@ -4,16 +4,21 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\DataModel;
+use App\Models\SurveyModel;
+
 
 class Form extends BaseController
 {
     protected $request;
     protected $DataModel;
+    protected $SurveyModel;
+
     protected $session;
      public function __construct()
     {
        $db = db_connect();
-       $this->DataModel = new DataModel($db); 
+       $this->DataModel = new DataModel($db);
+       $this->SurveyModel = new SurveyModel($db); 
        $this->request = \Config\Services::request();  
        
     }
@@ -74,5 +79,5 @@ class Form extends BaseController
         echo 'Error';
     } 
     }
-
+      
 }

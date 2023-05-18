@@ -45,6 +45,8 @@ $routes->get('table', 'Form::table');
 $routes->post('verify', 'Login::verify');
 
 $routes->post('update_modal', 'Form::updateModal');
+
+$routes->post('view_modal', 'Form::viewModal');
 // write data
 $routes->post('create', 'Form::createData');
 // read data
@@ -53,6 +55,12 @@ $routes->post('read', 'Form::readData');
 $routes->post('update', 'Form::updateData');
 // delete row
 $routes->post('delete', 'Form::deleteData');
+
+$routes->post('survey', 'Baseline::surveyData');
+
+
+
+
 
 
 

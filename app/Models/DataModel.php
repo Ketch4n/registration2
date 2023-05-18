@@ -20,7 +20,10 @@ class DataModel extends Model{
     {  
         $this->insert($data);
     }
-
+    public function surveyData($data)
+    {  
+        $this->insert($data);
+    }
      public function getData()
     {
         return $this->findAll();

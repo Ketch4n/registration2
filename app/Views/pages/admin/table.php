@@ -5,6 +5,7 @@
     <?php 
     echo view("include/meta.php");
     echo view("include/css.php");
+    echo view("include/datatables.php");
     ?>
 </head>
 
@@ -39,7 +40,7 @@
                                         ?>
                                         <!-- Inverse table card end -->
                                         <!-- Hover table card start -->
-                                        <div class="card">
+                                        <div class="card"> 
                                             <div class="card-header">
                                                 <h5>List of Establishment Data</h5>
                                               
@@ -86,6 +87,7 @@
                                     </div>
                                     <?php echo view("include/update_modal.php")?>
                                     <?php echo view("include/add_modal.php")?>
+                                  
                                     <!-- Page-body end -->
                                 </div>
                             </div>
@@ -97,10 +99,12 @@
                 </div>
             </div>
         </div>
-    </div>           
+    </div>    
+      
 <?php 
 echo view("include/script.php");
 echo view("include/update_modal.php");
+echo view("include/view_modal.php");
 ?>
 
 <script>
@@ -112,19 +116,19 @@ echo view("include/update_modal.php");
         },
         columns: [
             { data: 'code' },
-            { data: 'es_name' },
+            { data: 'es_name'},
             { data: 'contact_number' },
             { data: 'address' },
             { data: 'email_address' },
             { data: 'auth_person' },
             { data: 'position' },
-            { data: 'annual_report' },
+            { data: 'annual_report', defaultContent: '<a href="#" data-toggle="modal" data-target="#Modal3">No Data</a>' },
 
             {
                 data: null,
-                render: function(data, type, row) {
+                render: function(data, type, row) {                 
                     return '<span id="upd" data-name-id="'+row.id+'" data-name-name="'+row.es_name+'" data-name-code="'+row.code+'" data-name-contact="'+row.contact_number+'" data-name-address="'+row.address+'" data-name-email="'+row.email_address+'"data-name-auth="'+row.auth_person+'"data-name-pos="'+row.position+'"><i class="fa fa-edit"></i></span>'+
-                    '&nbsp; <span id="del" data-id="'+row.id+'"><i class="fa fa-trash"></i></span>'; 
+                    '&nbsp; <span id="del" data-id="'+row.id+'"><i class="fa fa-trash"></i></span>';                    
                 }
             }
         ]
@@ -141,6 +145,18 @@ echo view("include/update_modal.php");
             }
         });
     }
+});
+$(document).on('click', '#view', function() {
+    var id = $(this).data('id');
+    $.ajax({
+        url: base_url + 'view_modal',
+        method: "POST",
+        data: {id: id},
+        success: function(data) {
+            $('#edit-modal-body').html(data);
+            $('#Modal2').modal('show');
+        }
+    });
 });
 $(document).on('click', '#upd', function() {
     var id = $(this).data('id');
@@ -165,7 +181,7 @@ $(document).on('click', '#upd',function(){
     $('input[name=auth_person]').val($(this).data('name-auth'));
     $('input[name=position]').val($(this).data('name-pos'));
 })
-  $('#update_estab').on('submit', function(e) {
+$('#update_estab').on('submit', function(e) {
             e.preventDefault();
 
                $.ajax({
@@ -199,43 +215,40 @@ $('#add_estab').submit(function(e) {
                 }
             });
         });
+$('#add_survey').submit(function(e) {
+            e.preventDefault();
+            
+            $.ajax({
+                url: '<?= base_url('survey') ?>',
+                type: 'post',
+                data: $(this).serialize(),
+                success: function(response) {
+                   $('#Modal3').modal('hide');
+                   $('#myTable').DataTable().ajax.reload();
+                },
+                error: function(xhr, status, error) {
+                    console.log(xhr.responseText);
+                }
+            });
+        });
 </script>
 <script>
 // Initialize a counter for the number of visible modals
 let numVisibleModals = 0;
-
 // Attach a listener to all modal elements
 $('.modal').on('hidden.bs.modal', function () {
   // When a modal is hidden, decrement the counter
   numVisibleModals--;
-
   // If all modals are hidden, execute your function
   if (numVisibleModals === 0) {
-    $('input[name=id]').val($(this).data(''));
-
-    $('input[name=es_name]').val($(this).data(''));
-    $('input[name=code]').val($(this).data(''));
-    $('input[name=contact_number]').val($(this).data(''));
-    $('input[name=address]').val($(this).data(''));
-    $('input[name=email_address]').val($(this).data(''));
-    $('input[name=auth_person]').val($(this).data(''));
-    $('input[name=position]').val($(this).data(''));
+    $('input').val($(this).data(''));
   }
 });
 // When a modal is shown, increment the counter
 $('.modal').on('shown.bs.modal', function () {
   numVisibleModals++;
 });
-
-//     $(document).ready( function () {
-//   $('#myTable').DataTable({
-//     destroy: true,
-//     "paging": true, // disable pagination
-//     "ordering": true, // disable sorting
-//     "searching": true // disable searching
-//   });
-// });
-
 </script>  
 </body>
+  <?php echo view("include/view_modal")?>
 </html>
