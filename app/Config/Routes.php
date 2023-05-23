@@ -58,6 +58,17 @@ $routes->post('delete', 'Form::deleteData');
 
 $routes->post('survey', 'Baseline::surveyData');
 
+$routes->get('baseline', 'Baseline::index');
+
+$routes->post('read_baseline', 'Baseline::read');
+
+$routes->post('get-baseline', 'Baseline::get_baseline');
+
+
+
+
+
+
 
 
 

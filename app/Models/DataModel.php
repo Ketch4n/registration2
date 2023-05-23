@@ -13,6 +13,7 @@ class DataModel extends Model{
     }
 
     protected $table = 'establishment';
+    protected $primaryKey = 'id';
     protected $allowedFields = ['id','code', 'es_name','contact_number','address',
                                 'email_address','auth_person','position'];
     

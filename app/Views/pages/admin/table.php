@@ -42,22 +42,14 @@
                                         <!-- Hover table card start -->
                                         <div class="card"> 
                                             <div class="card-header">
-                                                <h5>List of Establishment Data</h5>
-                                              
+                                                <h5>List of Establishment Data </h5>
+                                    
                                                 <div class="pull-right">
                                                                 <a href="#" data-toggle="modal" data-target="#Modal"><button class="btn_submit" style="outline: none;"
                                                                  >Add New</button></a>
                                                               </div>  
                                                 <!-- <span>use class <code>table-hover</code> inside table element</span> -->
-                                                <!-- <div class="card-header-right">
-                                                    <ul class="list-unstyled card-option">
-                                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                        <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                        <li><i class="fa fa-minus minimize-card"></i></li>
-                                                        <li><i class="fa fa-refresh reload-card"></i></li>
-                                                        <li><i class="fa fa-trash close-card"></i></li>
-                                                    </ul>
-                                                </div> -->
+                                               
                                             </div>
                                             <div class="card-block table-border-style">
                                                 
@@ -115,8 +107,14 @@ echo view("include/view_modal.php");
             dataSrc: ''
         },
         columns: [
-            { data: 'code' },
-            { data: 'es_name'},
+            { data: 'code', 
+                createdCell: function (cell, cellData, rowData, rowIndex, colIndex) {
+                $(cell).css('font-weight', 'bold');
+            }},
+            { data: 'es_name',
+             render: function (data, type, row) {
+                return '<a href="#" id="esname" class="es-name-link" data-id="'+row.id+'">' + data + '  </a>';
+            }},
             { data: 'contact_number' },
             { data: 'address' },
             { data: 'email_address' },
@@ -126,13 +124,15 @@ echo view("include/view_modal.php");
 
             {
                 data: null,
-                render: function(data, type, row) {                 
+                render: function(data, type, row) {         
+                   
                     return '<span id="upd" data-name-id="'+row.id+'" data-name-name="'+row.es_name+'" data-name-code="'+row.code+'" data-name-contact="'+row.contact_number+'" data-name-address="'+row.address+'" data-name-email="'+row.email_address+'"data-name-auth="'+row.auth_person+'"data-name-pos="'+row.position+'"><i class="fa fa-edit"></i></span>'+
                     '&nbsp; <span id="del" data-id="'+row.id+'"><i class="fa fa-trash"></i></span>';                    
                 }
             }
         ]
     });
+
     $(document).on('click', '#del', function() {
     var id = $(this).data('id');
     if(confirm("Are you sure you want to delete this row?")) {
@@ -146,6 +146,25 @@ echo view("include/view_modal.php");
         });
     }
 });
+
+ $(document).on('click', '#esname', function() {
+    var id = $(this).data('id');
+    
+    window.location.href = base_url + 'baseline?id=' + id; 
+    
+});
+// $(document).on('click', '#esname', function() {
+//     var id = $(this).data('id');
+//     $.ajax({
+//         url: base_url + 'baseline',
+//         method: "POST",
+//         data: {id: id},
+//         success: function(data) {
+//             $('#edit-modal-body').html(data);
+//             $('#Modal2').modal('show');
+//         }
+//     });
+// });
 $(document).on('click', '#view', function() {
     var id = $(this).data('id');
     $.ajax({

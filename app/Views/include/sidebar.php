@@ -49,6 +49,7 @@
                                         <span class="pcoded-mtext">Table</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
+                                    
                                 </li>
                                 <li class="pcoded-submenu <?= $currentURL == '/form' ? "active" : '' ?>">
                                     <a href="<?php echo base_url('form')?>" class="waves-effect waves-dark menu ">

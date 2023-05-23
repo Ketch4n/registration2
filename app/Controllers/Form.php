@@ -79,5 +79,12 @@ class Form extends BaseController
         echo 'Error';
     } 
     }
-      
+    public function getSingleData()
+    {
+        // $dataModel = new DataModel();
+        $data = $this->DataModel->find(1); // Assuming you want to retrieve the data with ID 1
+
+        return json_encode($data);
+    } 
+    
 }
